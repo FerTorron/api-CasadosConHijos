@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api/personajes', personajesRouter)
 
-mongoose.connect(`mongodb+srv://admin:asd123@cluster0.tgztfkm.mongodb.net/infoSerie`)
+mongoose.connect(`mongodb+srv://admin:${password}@cluster0.tgztfkm.mongodb.net/infoSerie`)
 
 const server = app.listen(PORT, () => {
     console.log(`Servidor Inicializado en el  puerto ${PORT}`)
