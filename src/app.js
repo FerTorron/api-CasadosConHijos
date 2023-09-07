@@ -5,7 +5,7 @@ import personajesRouter from './routes/personajes.js'
 
 import dotenv from 'dotenv';
 dotenv.config();
-const password = process.env.PASSWORD;
+const password = process.env.USERPASSWORD;
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/api/personajes', personajesRouter)
 
-mongoose.connect(`mongodb+srv://admin:${password}@cluster0.tgztfkm.mongodb.net/infoSerie`)
+mongoose.connect(`mongodb+srv://${password}@cluster0.tgztfkm.mongodb.net/infoSerie`)
 
 const server = app.listen(PORT, () => {
     console.log(`Servidor Inicializado en el  puerto ${PORT}`)
